@@ -21,7 +21,7 @@ exports.handler = function(event, context) {
 
         // Send an sms message to the number provided in the event data.
         // End the lambda function when the send function completes.
-        sendSMS(event.to, 'Hello from Lambda Functions!',
+        sendSMS(event.to, event.message,
                 function(status) {
                         context.done(null, status);
                 }

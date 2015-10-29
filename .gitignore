@@ -28,3 +28,7 @@ node_modules
 
 # Any zipped code
 *.zip
+
+# Any selenium stuff
+facebook/selenium/*
+facebook/selenium-2.48.0.dist-info/*

@@ -11,7 +11,13 @@ exports.handler = function(event, context) {
                 url: baseUrl + 'facebook',
                 headers: {
                         'x-api-key' : apiKey
-                }
+                },
+                body : JSON.stringify({
+                        id: event.facebookId,
+                        body: event.message,
+                        username: event.facebookUsername,
+                        password: event.facebookPassword
+                })
         }, function(error, response, body) {
                 console.log(response.statusCode);
         

@@ -43,8 +43,20 @@ exports.handler = function(event, context) {
                                         url: event.url
                                 })
                         }, function(error, response, body) {
-                                console.log(response.statusCode);
-                                context.done(null, 'Completed facebook, sms, and voice');
+
+                                request.post({
+                                        url: baseUrl + 'email',
+                                        headers: {
+                                                'x-api-key' : apiKey
+                                        },
+                                        body: JSON.stringify({
+                                                emailAddress: event.emailAddress,
+                                                message: event.message
+                                        })
+                                }, function(error, response, body) {
+                                        console.log(response.statusCode);
+                                        context.done(null, 'Completed facebook, sms, and voice');
+                                })
                         })
                 })
         });

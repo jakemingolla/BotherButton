@@ -35,3 +35,8 @@ facebook/selenium-2.48.0.dist-info/*
 
 # Compiled python code
 *.pyc
+
+node_modules/*
+node_modules
+*/node_modules/*
+*/node_modules
